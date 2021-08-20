@@ -4,7 +4,7 @@ import "./styles.css";
 const songs = [
   {
     title: "Piet",
-    chords: ["C", "A", "F"]
+    chords: ["C", "A", "F", "A", "C"]
   },
   {
     title: "Henk",
@@ -18,16 +18,16 @@ export default function App() {
       <h1>My Ukelele Songs</h1>
       {songs.map((song) => {
         return (
-          <>
+          <div className="song">
             <h2>{song.title}</h2>
-            <div style={{ display: "flex" }}>
+            <div className="chords">
               <>
                 {song.chords.map((chord) => {
                   return <Chord chord={chord} />;
                 })}
               </>
             </div>
-          </>
+          </div>
         );
       })}
     </div>
@@ -36,11 +36,11 @@ export default function App() {
 
 function Chord({ chord }) {
   return (
-    <div>
+    <div className="chord">
       <div>
         <Ukelele width={200} height={200} chord={chord} />
       </div>
-      <div style={{ textAlign: "center" }}>
+      <div className="chord-name">
         <h3>{chord}</h3>
       </div>
     </div>
