@@ -1,0 +1,9 @@
+svg {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(90deg);
+}
+
+h3 {
+  font-size: 50px;
+}
