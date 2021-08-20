@@ -3,12 +3,14 @@ import "./styles.css";
 
 const songs = [
   {
-    title: "Piet",
-    chords: ["C", "A", "F", "A", "C"]
+    title: "Song 1",
+    chords: ["C", "A", "F", "B", "E"],
+    lines: [["C", "F", "C"], ["A"], ["B", "E"]]
   },
   {
-    title: "Henk",
-    chords: ["A", "B", "C"]
+    title: "Another great song",
+    chords: ["A", "B", "C"],
+    lines: [["A"], ["B", "A"], ["C", "A", "C"]]
   }
 ];
 
@@ -27,7 +29,16 @@ export default function App() {
                 })}
               </>
             </div>
-            (hier nog de volgorde)
+            <div className="lines">
+              {song.lines.map((line) => (
+                <>
+                  {line.map((chord) => (
+                    <>{chord} </>
+                  ))}
+                  <br />
+                </>
+              ))}
+            </div>
           </div>
         );
       })}
