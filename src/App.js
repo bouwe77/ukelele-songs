@@ -27,6 +27,7 @@ export default function App() {
                 })}
               </>
             </div>
+            (hier nog de volgorde)
           </div>
         );
       })}
