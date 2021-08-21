@@ -18,7 +18,8 @@ const songs = [
     lines: [
       ["A", "B", "C"],
       ["A", "B", "C"]
-    ]
+    ],
+    links: ["https://bouwe.io", "https://youtube.com"]
   },
   {
     title: "Test456",
@@ -26,7 +27,8 @@ const songs = [
     lines: [
       ["A", "B", "C"],
       ["A", "B", "C"]
-    ]
+    ],
+    links: []
   }
 ];
 
@@ -51,12 +53,25 @@ export default function App() {
               {song.lines.map((line, lineIndex) => (
                 <div key={`${song.title}-line-${lineIndex}`}>
                   {line.map((chord, chordIndex) => (
-                    <div key={`${song.title}-line-${lineIndex}-${chordIndex}`}>
-                      {chord}
-                    </div>
+                    <>
+                      <span
+                        key={`${song.title}-line-${lineIndex}-${chordIndex}`}
+                      >
+                        {chord}
+                      </span>{" "}
+                    </>
                   ))}
                   <br />
                 </div>
+              ))}
+            </div>
+            <div className="links">
+              {song.links.map((link) => (
+                <ul>
+                  <li>
+                    <a href={link}>{link}</a>
+                  </li>
+                </ul>
               ))}
             </div>
           </div>
