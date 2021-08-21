@@ -19,6 +19,14 @@ const songs = [
       ["A", "B", "C"],
       ["A", "B", "C"]
     ]
+  },
+  {
+    title: "Test456",
+    chords: ["A", "B", "C"],
+    lines: [
+      ["A", "B", "C"],
+      ["A", "B", "C"]
+    ]
   }
 ];
 
@@ -28,23 +36,27 @@ export default function App() {
       <h1>My Ukelele Songs</h1>
       {songs.map((song) => {
         return (
-          <div className="song">
+          <div key={song.title} className="song">
             <h2>{song.title}</h2>
             <div className="chords">
               <>
-                {song.chords.map((chord) => {
-                  return <Chord chord={chord} />;
+                {song.chords.map((chord, index) => {
+                  return (
+                    <Chord key={`${song.title}-chord-${index}`} chord={chord} />
+                  );
                 })}
               </>
             </div>
             <div className="lines">
-              {song.lines.map((line) => (
-                <>
-                  {line.map((chord) => (
-                    <>{chord} </>
+              {song.lines.map((line, lineIndex) => (
+                <div key={`${song.title}-line-${lineIndex}`}>
+                  {line.map((chord, chordIndex) => (
+                    <div key={`${song.title}-line-${lineIndex}-${chordIndex}`}>
+                      {chord}
+                    </div>
                   ))}
                   <br />
-                </>
+                </div>
               ))}
             </div>
           </div>
