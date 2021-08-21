@@ -2,15 +2,23 @@ import Ukelele from "react-ukelele";
 import "./styles.css";
 
 const songs = [
+  // {
+  //   title: "Your Love Keeps Lifting Me Higher",
+  //   chords: ["D", "G", "G6"],
+  //   lines: [["D", "G", "G6"]]
+  // },
+  // {
+  //   title: "Twist In My Sobriety",
+  //   chords: ["Em", "Am7", "B"],
+  //   lines: [["Em"], ["Am7", "B"]] //, ["C", "A", "C"]]
+  // },
   {
-    title: "Song 1",
-    chords: ["C", "A", "F", "B", "E"],
-    lines: [["C", "F", "C"], ["A"], ["B", "E"]]
-  },
-  {
-    title: "Another great song",
+    title: "Test123",
     chords: ["A", "B", "C"],
-    lines: [["A"], ["B", "A"], ["C", "A", "C"]]
+    lines: [
+      ["A", "B", "C"],
+      ["A", "B", "C"]
+    ]
   }
 ];
 
