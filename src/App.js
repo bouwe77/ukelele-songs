@@ -1,4 +1,5 @@
 import Ukelele from "react-ukelele";
+import Example from "./Example";
 import "./styles.css";
 
 const songs = [
@@ -19,7 +20,8 @@ const songs = [
       ["A", "B", "C"],
       ["A", "B", "C"]
     ],
-    links: ["https://bouwe.io", "https://youtube.com"]
+    links: ["https://bouwe.io", "https://youtube.com"],
+    kind: "song"
   },
   {
     title: "Test456",
@@ -28,13 +30,15 @@ const songs = [
       ["A", "B", "C"],
       ["A", "B", "C"]
     ],
-    links: []
+    links: [],
+    kind: "chords"
   }
 ];
 
 export default function App() {
   return (
     <div>
+      <Example />
       <h1>My Ukelele Songs</h1>
       {songs.map((song) => {
         return (
@@ -69,7 +73,9 @@ export default function App() {
               {song.links.map((link) => (
                 <ul>
                   <li>
-                    <a href={link}>{link}</a>
+                    <a href={link} target="_blank" rel="noreferrer">
+                      {link}
+                    </a>
                   </li>
                 </ul>
               ))}
