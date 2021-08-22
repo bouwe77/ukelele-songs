@@ -59,12 +59,32 @@ function useCityMatch(term) {
 }
 
 function useCitySearch(searchTerm) {
-  const [cities, _] = useState([
-    { city: "Tzum", state: "FRL" },
-    { city: "Drachten", state: "FRL" }
-  ]);
+  const [cities, setCities] = useState([{ city: "Tzum", state: "FRL" }]);
+
+  // useEffect(() => {
+  //   if (searchTerm.trim() !== "") {
+  //     let isFresh = true;
+  //     fetchCities(searchTerm).then((cities) => {
+  //       if (isFresh) setCities(cities);
+  //     });
+  //     return () => (isFresh = false);
+  //   }
+  // }, [searchTerm]);
 
   return cities;
 }
+
+// const cache = {};
+// function fetchCities(value) {
+//   if (cache[value]) {
+//     return Promise.resolve(cache[value]);
+//   }
+//   return fetch("https://city-search.chaance.vercel.app/api?" + value)
+//     .then((res) => res.json())
+//     .then((result) => {
+//       cache[value] = result;
+//       return result;
+//     });
+// }
 
 export default Example;
