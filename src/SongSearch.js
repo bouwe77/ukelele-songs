@@ -7,25 +7,32 @@ import {
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
 import { useThrottle } from "react-use";
-import { useState, useMemo } from "react";
+import { useState, useRef, useMemo } from "react";
 import { matchSorter } from "match-sorter";
 
-function SongSearch() {
+function SongSearch({ onSelect }) {
+  const foundSongs = useRef({});
   const [term, setTerm] = useState("");
   const results = useSongMatch(term);
   const handleChange = (event) => setTerm(event.target.value);
 
+  function handleSelect(title) {
+    onSelect(foundSongs.current[title]);
+  }
+
   return (
     <div>
-      <Combobox aria-label="Songs">
+      <Combobox aria-label="Songs" onSelect={handleSelect}>
         <ComboboxInput className="song-search-input" onChange={handleChange} />
         {results && (
           <ComboboxPopover className="shadow-popup">
             {results.length > 0 ? (
               <ComboboxList>
-                {results.slice(0, 10).map((result, index) => (
-                  <ComboboxOption key={index} value={`${result.title}`} />
-                ))}
+                {results.slice(0, 10).map((result, index) => {
+                  const value = `${result.title}`;
+                  foundSongs.current[value] = result;
+                  return <ComboboxOption key={index} value={value} />;
+                })}
               </ComboboxList>
             ) : (
               <span style={{ display: "block", margin: 8 }}>
