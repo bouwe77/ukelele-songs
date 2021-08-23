@@ -74,7 +74,7 @@ function useSongSearch(searchTerm) {
     //   lines: [["Em"], ["Am7", "B"]] //, ["C", "A", "C"]]
     // },
     {
-      title: "Test123",
+      title: "I Love You",
       chords: ["A", "B", "C"],
       lines: [
         ["A", "B", "C"],
@@ -84,7 +84,7 @@ function useSongSearch(searchTerm) {
       kind: "song"
     },
     {
-      title: "Test456",
+      title: "My Song",
       chords: ["A", "D", "E"],
       lines: [
         ["A", "D", "E"],
