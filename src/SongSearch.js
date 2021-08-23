@@ -22,7 +22,7 @@ function SongSearch({ onSelect }) {
 
   return (
     <div>
-      <Combobox aria-label="Songs" onSelect={handleSelect}>
+      <Combobox aria-label="Songs" onSelect={handleSelect} openOnFocus>
         <ComboboxInput className="song-search-input" onChange={handleChange} />
         {results && (
           <ComboboxPopover className="shadow-popup">
@@ -53,7 +53,7 @@ function useSongMatch(term) {
   return useMemo(
     () =>
       throttledTerm.trim() === ""
-        ? null
+        ? songs
         : matchSorter(songs, throttledTerm, {
             keys: [(song) => `${song.title}`]
           }),
@@ -85,10 +85,10 @@ function useSongSearch(searchTerm) {
     },
     {
       title: "Test456",
-      chords: ["A", "B", "C"],
+      chords: ["A", "D", "E"],
       lines: [
-        ["A", "B", "C"],
-        ["A", "B", "C"]
+        ["A", "D", "E"],
+        ["E", "D", "E"]
       ],
       links: [],
       kind: "chords"
