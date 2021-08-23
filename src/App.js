@@ -1,5 +1,5 @@
 import Ukelele from "react-ukelele";
-import SongComboBox from "./Example";
+import SongSearch from "./SongSearch";
 import "./styles.css";
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
     <div>
       <h1>My Ukelele Songs</h1>
       <div>
-        <SongComboBox />
+        <SongSearch />
       </div>
       <div key={song.title} className="song">
         <h2>{song.title}</h2>

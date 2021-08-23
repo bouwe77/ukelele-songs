@@ -10,7 +10,7 @@ import { useThrottle } from "react-use";
 import { useState, useMemo } from "react";
 import { matchSorter } from "match-sorter";
 
-function SongComboBox() {
+function SongSearch() {
   const [term, setTerm] = useState("");
   const results = useSongMatch(term);
   const handleChange = (event) => setTerm(event.target.value);
@@ -117,4 +117,4 @@ function useSongSearch(searchTerm) {
 //     });
 // }
 
-export default SongComboBox;
+export default SongSearch;
