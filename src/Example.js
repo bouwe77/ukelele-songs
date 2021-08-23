@@ -7,7 +7,7 @@ import {
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
 import { useThrottle } from "react-use";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { matchSorter } from "match-sorter";
 
 function SongComboBox() {
@@ -17,7 +17,6 @@ function SongComboBox() {
 
   return (
     <div>
-      <h4>Clientside Search</h4>
       <Combobox aria-label="Songs">
         <ComboboxInput className="song-search-input" onChange={handleChange} />
         {results && (
@@ -56,11 +55,41 @@ function useSongMatch(term) {
 }
 
 function useSongSearch(searchTerm) {
-  const [songs, setSongs] = useState([
-    { title: "Test 123" },
-    { title: "Another Song" },
-    { title: "It's Now Or Never" }
-  ]);
+  const songs = [
+    // {
+    //   title: "Your Love Keeps Lifting Me Higher",
+    //   chords: ["D", "G", "G6"],
+    //   lines: [["D", "G", "G6"]]
+    // },
+    // {
+    //   title: "Twist In My Sobriety",
+    //   chords: ["Em", "Am7", "B"],
+    //   lines: [["Em"], ["Am7", "B"]] //, ["C", "A", "C"]]
+    // },
+    {
+      title: "Test123",
+      chords: ["A", "B", "C"],
+      lines: [
+        ["A", "B", "C"],
+        ["A", "B", "C"]
+      ],
+      links: ["https://bouwe.io", "https://youtube.com"],
+      kind: "song"
+    },
+    {
+      title: "Test456",
+      chords: ["A", "B", "C"],
+      lines: [
+        ["A", "B", "C"],
+        ["A", "B", "C"]
+      ],
+      links: [],
+      kind: "chords"
+    }
+  ];
+
+  // const [songs, setSongs] = useState([
+  // ]);
 
   // useEffect(() => {
   //   if (searchTerm.trim() !== "") {

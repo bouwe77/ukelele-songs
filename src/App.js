@@ -2,18 +2,8 @@ import Ukelele from "react-ukelele";
 import SongComboBox from "./Example";
 import "./styles.css";
 
-const songs = [
-  // {
-  //   title: "Your Love Keeps Lifting Me Higher",
-  //   chords: ["D", "G", "G6"],
-  //   lines: [["D", "G", "G6"]]
-  // },
-  // {
-  //   title: "Twist In My Sobriety",
-  //   chords: ["Em", "Am7", "B"],
-  //   lines: [["Em"], ["Am7", "B"]] //, ["C", "A", "C"]]
-  // },
-  {
+export default function App() {
+  const song = {
     title: "Test123",
     chords: ["A", "B", "C"],
     lines: [
@@ -22,67 +12,51 @@ const songs = [
     ],
     links: ["https://bouwe.io", "https://youtube.com"],
     kind: "song"
-  },
-  {
-    title: "Test456",
-    chords: ["A", "B", "C"],
-    lines: [
-      ["A", "B", "C"],
-      ["A", "B", "C"]
-    ],
-    links: [],
-    kind: "chords"
-  }
-];
+  };
 
-export default function App() {
   return (
     <div>
-      <SongComboBox />
       <h1>My Ukelele Songs</h1>
-      {songs.map((song) => {
-        return (
-          <div key={song.title} className="song">
-            <h2>{song.title}</h2>
-            <div className="chords">
-              <>
-                {song.chords.map((chord, index) => {
-                  return (
-                    <Chord key={`${song.title}-chord-${index}`} chord={chord} />
-                  );
-                })}
-              </>
-            </div>
-            <div className="lines">
-              {song.lines.map((line, lineIndex) => (
-                <div key={`${song.title}-line-${lineIndex}`}>
-                  {line.map((chord, chordIndex) => (
-                    <>
-                      <span
-                        key={`${song.title}-line-${lineIndex}-${chordIndex}`}
-                      >
-                        {chord}
-                      </span>{" "}
-                    </>
-                  ))}
-                  <br />
-                </div>
+      <div>
+        <SongComboBox />
+      </div>
+      <div key={song.title} className="song">
+        <h2>{song.title}</h2>
+        <div className="chords">
+          <>
+            {song.chords.map((chord, index) => {
+              return (
+                <Chord key={`${song.title}-chord-${index}`} chord={chord} />
+              );
+            })}
+          </>
+        </div>
+        <div className="lines">
+          {song.lines.map((line, lineIndex) => (
+            <div key={`${song.title}-line-${lineIndex}`}>
+              {line.map((chord, chordIndex) => (
+                <>
+                  <span key={`${song.title}-line-${lineIndex}-${chordIndex}`}>
+                    {chord}
+                  </span>{" "}
+                </>
               ))}
+              <br />
             </div>
-            <div className="links">
-              {song.links.map((link) => (
-                <ul>
-                  <li>
-                    <a href={link} target="_blank" rel="noreferrer">
-                      {link}
-                    </a>
-                  </li>
-                </ul>
-              ))}
-            </div>
-          </div>
-        );
-      })}
+          ))}
+        </div>
+        <div className="links">
+          {song.links.map((link) => (
+            <ul>
+              <li>
+                <a href={link} target="_blank" rel="noreferrer">
+                  {link}
+                </a>
+              </li>
+            </ul>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
