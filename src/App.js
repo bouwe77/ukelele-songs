@@ -1,5 +1,5 @@
 import Ukelele from "react-ukelele";
-import Example from "./Example";
+import SongComboBox from "./Example";
 import "./styles.css";
 
 const songs = [
@@ -38,7 +38,7 @@ const songs = [
 export default function App() {
   return (
     <div>
-      <Example />
+      <SongComboBox />
       <h1>My Ukelele Songs</h1>
       {songs.map((song) => {
         return (

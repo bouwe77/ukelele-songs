@@ -10,25 +10,22 @@ import { useThrottle } from "react-use";
 import { useState, useEffect, useMemo } from "react";
 import { matchSorter } from "match-sorter";
 
-function Example() {
+function SongComboBox() {
   const [term, setTerm] = useState("");
-  const results = useCityMatch(term);
+  const results = useSongMatch(term);
   const handleChange = (event) => setTerm(event.target.value);
 
   return (
     <div>
       <h4>Clientside Search</h4>
-      <Combobox aria-label="Cities">
-        <ComboboxInput className="city-search-input" onChange={handleChange} />
+      <Combobox aria-label="Songs">
+        <ComboboxInput className="song-search-input" onChange={handleChange} />
         {results && (
           <ComboboxPopover className="shadow-popup">
             {results.length > 0 ? (
               <ComboboxList>
                 {results.slice(0, 10).map((result, index) => (
-                  <ComboboxOption
-                    key={index}
-                    value={`${result.city}, ${result.state}`}
-                  />
+                  <ComboboxOption key={index} value={`${result.title}`} />
                 ))}
               </ComboboxList>
             ) : (
@@ -43,43 +40,47 @@ function Example() {
   );
 }
 
-function useCityMatch(term) {
+function useSongMatch(term) {
   const throttledTerm = useThrottle(term, 100);
-  const cities = useCitySearch(term);
+  const songs = useSongSearch(term);
 
   return useMemo(
     () =>
       throttledTerm.trim() === ""
         ? null
-        : matchSorter(cities, throttledTerm, {
-            keys: [(item) => `${item.city}, ${item.state}`]
+        : matchSorter(songs, throttledTerm, {
+            keys: [(song) => `${song.title}`]
           }),
-    [throttledTerm, cities]
+    [throttledTerm, songs]
   );
 }
 
-function useCitySearch(searchTerm) {
-  const [cities, setCities] = useState([{ city: "Tzum", state: "FRL" }]);
+function useSongSearch(searchTerm) {
+  const [songs, setSongs] = useState([
+    { title: "Test 123" },
+    { title: "Another Song" },
+    { title: "It's Now Or Never" }
+  ]);
 
   // useEffect(() => {
   //   if (searchTerm.trim() !== "") {
   //     let isFresh = true;
-  //     fetchCities(searchTerm).then((cities) => {
-  //       if (isFresh) setCities(cities);
+  //     fetchSongs(searchTerm).then((songs) => {
+  //       if (isFresh) setSongs(songs);
   //     });
   //     return () => (isFresh = false);
   //   }
   // }, [searchTerm]);
 
-  return cities;
+  return songs;
 }
 
 // const cache = {};
-// function fetchCities(value) {
+// function fetchSongs(value) {
 //   if (cache[value]) {
 //     return Promise.resolve(cache[value]);
 //   }
-//   return fetch("https://city-search.chaance.vercel.app/api?" + value)
+//   return fetch("https://my-stuff/api?" + value)
 //     .then((res) => res.json())
 //     .then((result) => {
 //       cache[value] = result;
@@ -87,4 +88,4 @@ function useCitySearch(searchTerm) {
 //     });
 // }
 
-export default Example;
+export default SongComboBox;
