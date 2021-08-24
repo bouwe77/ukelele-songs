@@ -12,3 +12,12 @@
 
 .links {
 }
+
+.line {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.line-chord {
+  width: 60px;
+}

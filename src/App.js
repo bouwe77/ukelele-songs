@@ -34,15 +34,15 @@ function Song({ song }) {
       </div>
       <div className="lines">
         {song.lines.map((line, lineIndex) => (
-          <div key={`${song.title}-line-${lineIndex}`}>
+          <div className="line" key={`${song.title}-line-${lineIndex}`}>
             {line.map((chord, chordIndex) => (
-              <>
-                <span key={`${song.title}-line-${lineIndex}-${chordIndex}`}>
-                  {chord}
-                </span>{" "}
-              </>
+              <div
+                class="line-chord"
+                key={`${song.title}-line-${lineIndex}-${chordIndex}`}
+              >
+                {chord}
+              </div>
             ))}
-            <br />
           </div>
         ))}
       </div>
