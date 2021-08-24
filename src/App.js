@@ -39,6 +39,11 @@ function Song({ song }) {
               <div
                 class="line-chord"
                 key={`${song.title}-line-${lineIndex}-${chordIndex}`}
+                style={
+                  line.length === 1 && chord.length >= 5
+                    ? { fontWeight: "bold", textTransform: "uppercase" }
+                    : undefined
+                }
               >
                 {chord}
               </div>

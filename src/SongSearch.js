@@ -22,7 +22,6 @@ function SongSearch({ onSelect }) {
 
   return (
     <div>
-      Search a song
       <Combobox aria-label="Songs" onSelect={handleSelect} openOnFocus>
         <ComboboxInput className="song-search-input" onChange={handleChange} />
         {results && (
