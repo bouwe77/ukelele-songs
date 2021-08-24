@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Ukelele from "react-ukelele";
+import { Chord } from "./ukelele/Chord";
 import SongSearch from "./SongSearch";
 import "./styles.css";
 
@@ -56,19 +56,6 @@ function Song({ song }) {
             </li>
           </ul>
         ))}
-      </div>
-    </div>
-  );
-}
-
-function Chord({ chord }) {
-  return (
-    <div className="chord">
-      <div>
-        <Ukelele width={200} height={200} chord={chord} />
-      </div>
-      <div className="chord-name">
-        <h3>{chord}</h3>
       </div>
     </div>
   );
