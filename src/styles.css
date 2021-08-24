@@ -21,3 +21,14 @@
 .line-chord {
   width: 60px;
 }
+
+.buttonAsLink {
+  border: 0;
+  background: transparent;
+  text-decoration: underline;
+  cursor: pointer;
+  width: 50px;
+  height: 24px;
+  margin: 0px 3px 0px 0px;
+  text-align: left;
+}

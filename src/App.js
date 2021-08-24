@@ -4,20 +4,60 @@ import SongSearch from "./SongSearch";
 import "./styles.css";
 
 export default function App() {
-  const [selectedSong, setSelectedSong] = useState();
+  const [page, setPage] = useState("songs");
 
+  return (
+    <div>
+      <h1>My Ukelele Songs</h1>
+      <nav>
+        <button className="buttonAsLink" onClick={() => setPage("songs")}>
+          songs
+        </button>
+        <button className="buttonAsLink" onClick={() => setPage("chords")}>
+          chords
+        </button>
+      </nav>
+      {page === "songs" ? <SongPage /> : <ChordsPage />}
+    </div>
+  );
+}
+
+function ChordsPage() {
+  const [selectedChord, setSelectedChord] = useState("C");
+  return (
+    <>
+      <div style={{ display: "flex" }}>
+        <button onClick={() => setSelectedChord("C")}>C</button>
+        <button onClick={() => setSelectedChord("D")}>D</button>
+        <button onClick={() => setSelectedChord("E")}>E</button>
+        <button onClick={() => setSelectedChord("F")}>F</button>
+        <button onClick={() => setSelectedChord("G")}>G</button>
+        <button onClick={() => setSelectedChord("A")}>A</button>
+        <button onClick={() => setSelectedChord("B")}>B</button>
+      </div>
+      <h1>{selectedChord}</h1>
+      <div className="chords">
+        <Chord chord={selectedChord} />
+        <Chord chord={`${selectedChord}m`} />
+        <Chord chord={`${selectedChord}7`} />
+      </div>
+    </>
+  );
+}
+
+function SongPage() {
+  const [selectedSong, setSelectedSong] = useState();
   function selectSong(song) {
     setSelectedSong(song);
   }
 
   return (
-    <div>
-      <h1>My Ukelele Songs</h1>
+    <>
       <div>
         <SongSearch onSelect={selectSong} />
       </div>
       {selectedSong ? <Song song={selectedSong} /> : null}
-    </div>
+    </>
   );
 }
 
