@@ -28,6 +28,7 @@ export const CHORDS = {
       fingerId: 1
     }
   ],
+  Am7: [],
   B: [
     {
       string: [1, 2],
