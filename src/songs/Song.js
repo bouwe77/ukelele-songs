@@ -1,4 +1,4 @@
-import { Chord } from "../ukelele/Chord";
+import { Chord } from "../chords/Chord";
 
 export function Song({ song }) {
   return (

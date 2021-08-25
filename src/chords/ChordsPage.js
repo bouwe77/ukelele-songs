@@ -1,5 +1,5 @@
 import useLocalStorageState from "use-local-storage-state";
-import { Chord } from "../ukelele/Chord";
+import { Chord } from "./Chord";
 
 const chords = ["C", "D", "E", "F", "G", "A", "B"];
 

@@ -67,35 +67,34 @@ function useSongMatch(term) {
 
 function useSongSearch(searchTerm) {
   const songs = [
-    // {
-    //   title: "Your Love Keeps Lifting Me Higher",
-    //   chords: ["D", "G", "G6"],
-    //   lines: [["D", "G", "G6"]]
-    // },
-    // {
-    //   title: "Twist In My Sobriety",
-    //   chords: ["Em", "Am7", "B"],
-    //   lines: [
-    //     ["Verse"],
-    //     ["Em", "Am7", "B", "Em"],
-    //     ["Em", "Am7", "B", "Em"],
-    //     ["B", "Em"],
-    //     ["Chorus"],
-    //     ["B", "Em"],
-    //     ["B", "Em"],
-    //     ["Am7", "Em", "B", "Em"],
-    //     ["B", "Em", "B", "(Em)"],
-    //     ["Break"],
-    //     ["to do..."],
-    //     ["to do..."],
-    //     ["to do..."]
-    //   ],
-    //   links: [
-    //     "https://tabs.ultimate-guitar.com/tab/tanita-tikaram/twist-in-my-sobriety-chords-1394609"
-    //   ]
-    // },
     {
-      title: "That's Allright Mama",
+      title: "Your Love Keeps Lifting Me Higher",
+      chords: ["D", "G", "G6"],
+      lines: [["D", "G", "G6", "D"]],
+      links: []
+    },
+    {
+      title: "Twist In My Sobriety",
+      chords: ["Em", "Am7", "B"],
+      lines: [
+        ["Verse"],
+        ["Em", "Am7", "B", "Em"],
+        ["Em", "Am7", "B", "Em"],
+        ["B", "Em"],
+        ["Chorus"],
+        ["B", "Em"],
+        ["B", "Em"],
+        ["Am7", "Em", "B", "Em"],
+        ["B", "Em", "B", "(Em)"],
+        ["Break"],
+        ["to do...", "to do...", "to do..."]
+      ],
+      links: [
+        "https://tabs.ultimate-guitar.com/tab/tanita-tikaram/twist-in-my-sobriety-chords-1394609"
+      ]
+    },
+    {
+      title: "That's Alright Mama",
       chords: ["C", "C7", "F", "G7"],
       lines: [["C"], ["C"], ["C", "C7"], ["C7", "F"], ["F", "G7", "C"]],
       links: [
@@ -196,26 +195,26 @@ function useSongSearch(searchTerm) {
       kind: "song"
     },
 
-    // {
-    //   title: "Hot Potato",
-    //   chords: ["C", "A", "G#", "G", "Dm"],
-    //   lines: [
-    //     ["Chorus"],
-    //     ["C"],
-    //     ["C"],
-    //     ["C"],
-    //     ["A"],
-    //     ["G#", "G", "C"],
-    //     ["Whiggy, Whiggy"],
-    //     ["Dm"],
-    //     ["Dm"],
-    //     ["C"]
-    //   ],
-    //   links: [
-    //     "https://tabs.ultimate-guitar.com/tab/the-wiggles/hot-potato-ukulele-1380803"
-    //   ],
-    //   kind: "song"
-    // },
+    {
+      title: "Hot Potato",
+      chords: ["C", "A", "G#", "G", "Dm"],
+      lines: [
+        ["Chorus"],
+        ["C"],
+        ["C"],
+        ["C"],
+        ["A"],
+        ["G#", "G", "C"],
+        ["Whiggy, Whiggy"],
+        ["Dm"],
+        ["Dm"],
+        ["C"]
+      ],
+      links: [
+        "https://tabs.ultimate-guitar.com/tab/the-wiggles/hot-potato-ukulele-1380803"
+      ],
+      kind: "song"
+    },
     {
       title: "I Saw The Light",
       chords: ["G", "C", "D"],
