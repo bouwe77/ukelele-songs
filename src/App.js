@@ -34,7 +34,7 @@ export default function App() {
       {page === "songs" ? <SongPage /> : <ChordsPage />}
 
       <footer>
-        Made by <a href="https://bouwe.io">Bouwe</a> 🧔🏻‍♂
+        Made by <a href="https://bouwe.io">Bouwe</a> 🧔🏻‍
       </footer>
     </div>
   );
