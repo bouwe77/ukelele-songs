@@ -6,14 +6,23 @@ import { SongPage } from "./songs/SongPage";
 export default function App() {
   const [page, setPage] = useState("songs");
 
+  const getNavClassName = (nav) =>
+    nav === page ? `nav-item nav-item-active` : `nav-item`;
+
   return (
     <div>
       <h1>My Ukelele Songs</h1>
       <nav>
-        <button className="buttonAsLink" onClick={() => setPage("songs")}>
+        <button
+          className={getNavClassName("songs")}
+          onClick={() => setPage("songs")}
+        >
           songs
         </button>
-        <button className="buttonAsLink" onClick={() => setPage("chords")}>
+        <button
+          className={getNavClassName("chords")}
+          onClick={() => setPage("chords")}
+        >
           chords
         </button>
       </nav>

@@ -1,20 +1,28 @@
 import { useState } from "react";
 import { Chord } from "../ukelele/Chord";
 
+const chords = ["C", "D", "E", "F", "G", "A", "B"];
+
 export function ChordsPage() {
-  const [selectedChord, setSelectedChord] = useState("C");
+  const [selectedChord, setSelectedChord] = useState(chords[0]);
+
+  const getButtonClassName = (chord) =>
+    chord === selectedChord
+      ? "chord-button chord-button-active"
+      : "chord-button";
+
   return (
     <>
-      <div style={{ display: "flex" }}>
-        <button onClick={() => setSelectedChord("C")}>C</button>
-        <button onClick={() => setSelectedChord("D")}>D</button>
-        <button onClick={() => setSelectedChord("E")}>E</button>
-        <button onClick={() => setSelectedChord("F")}>F</button>
-        <button onClick={() => setSelectedChord("G")}>G</button>
-        <button onClick={() => setSelectedChord("A")}>A</button>
-        <button onClick={() => setSelectedChord("B")}>B</button>
+      <div className="chord-buttons">
+        {chords.map((chord) => (
+          <button
+            onClick={() => setSelectedChord(chord)}
+            className={getButtonClassName(chord)}
+          >
+            {chord}
+          </button>
+        ))}
       </div>
-      <h1>{selectedChord}</h1>
       <div className="chords">
         <Chord chord={selectedChord} />
         <Chord chord={`${selectedChord}m`} />
