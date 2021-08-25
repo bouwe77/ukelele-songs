@@ -15,7 +15,7 @@ export default function App() {
         <div>
           <h1>My Uke</h1>
         </div>
-        <div class="nav-items">
+        <div className="nav-items">
           <button
             className={getNavClassName("songs")}
             onClick={() => setPage("songs")}

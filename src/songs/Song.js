@@ -3,6 +3,7 @@ import { Chord } from "../ukelele/Chord";
 export function Song({ song }) {
   return (
     <div key={song.title} className="song">
+      <h2>{song.title}</h2>
       <div className="chords">
         <>
           {song.chords.map((chord, index) => {
@@ -15,7 +16,7 @@ export function Song({ song }) {
           <div className="line" key={`${song.title}-line-${lineIndex}`}>
             {line.map((chord, chordIndex) => (
               <div
-                class="line-chord"
+                className="line-chord"
                 key={`${song.title}-line-${lineIndex}-${chordIndex}`}
                 style={
                   line.length === 1 && chord.length >= 5
@@ -31,13 +32,13 @@ export function Song({ song }) {
       </div>
       <div className="links">
         {song.links.map((link) => (
-          <ul>
-            <li>
-              <a href={link} target="_blank" rel="noreferrer">
-                {link}
-              </a>
-            </li>
-          </ul>
+          <>
+            <a href={link} target="_blank" rel="noreferrer">
+              {link}
+            </a>
+            <br />
+            <br />
+          </>
         ))}
       </div>
     </div>

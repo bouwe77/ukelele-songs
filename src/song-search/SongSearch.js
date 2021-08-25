@@ -11,7 +11,7 @@ import { useThrottle } from "react-use";
 import { useState, useRef, useMemo } from "react";
 import { matchSorter } from "match-sorter";
 
-function SongSearch({ onSelect }) {
+function SongSearch({ piet, onSelect }) {
   const foundSongs = useRef({});
   const [term, setTerm] = useState("");
   const results = useSongMatch(term);
