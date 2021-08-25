@@ -32,11 +32,13 @@ h1 {
 }
 
 nav {
-  height: 40px;
+  display: flex;
+  height: 80px;
 }
 
-footer {
-  margin-top: 30px;
+.nav-items {
+  margin-top: 20px;
+  margin-left: 150px;
 }
 
 .nav-item {
@@ -59,7 +61,6 @@ footer {
 
 .nav-item-active {
   color: purple;
-  font-weight: bold;
 }
 
 a,
@@ -88,4 +89,8 @@ a:hover {
 
 .chord-button-active {
   background: purple;
+}
+
+footer {
+  margin-top: 30px;
 }

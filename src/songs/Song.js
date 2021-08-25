@@ -3,7 +3,6 @@ import { Chord } from "../ukelele/Chord";
 export function Song({ song }) {
   return (
     <div key={song.title} className="song">
-      <h2>{song.title}</h2>
       <div className="chords">
         <>
           {song.chords.map((chord, index) => {

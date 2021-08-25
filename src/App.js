@@ -11,26 +11,30 @@ export default function App() {
 
   return (
     <div>
-      <h1>My Ukelele Songs</h1>
       <nav>
-        <button
-          className={getNavClassName("songs")}
-          onClick={() => setPage("songs")}
-        >
-          songs
-        </button>
-        <button
-          className={getNavClassName("chords")}
-          onClick={() => setPage("chords")}
-        >
-          chords
-        </button>
+        <div>
+          <h1>My Uke</h1>
+        </div>
+        <div class="nav-items">
+          <button
+            className={getNavClassName("songs")}
+            onClick={() => setPage("songs")}
+          >
+            songs
+          </button>
+          <button
+            className={getNavClassName("chords")}
+            onClick={() => setPage("chords")}
+          >
+            chords
+          </button>
+        </div>
       </nav>
 
       {page === "songs" ? <SongPage /> : <ChordsPage />}
 
       <footer>
-        Made by <a href="https://bouwe.io">Bouwe</a> 🧔🏻‍♂️
+        Made by <a href="https://bouwe.io">Bouwe</a> 🧔🏻‍♂
       </footer>
     </div>
   );
