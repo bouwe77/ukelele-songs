@@ -1,4 +1,4 @@
-import Ukelele from "react-ukelele";
+import Ukelele from "../react-ukelele";
 import styles from "./Chord.module.css";
 
 export function Chord({ chord }) {
