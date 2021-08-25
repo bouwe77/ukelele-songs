@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Chord } from "./ukelele/Chord";
-import SongSearch from "./SongSearch";
+import SongSearch from "./song-search/SongSearch";
 import "./styles.css";
 
 export default function App() {

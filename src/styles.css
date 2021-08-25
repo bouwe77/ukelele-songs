@@ -22,13 +22,35 @@
   width: 60px;
 }
 
+nav {
+  height: 40px;
+}
+
 .buttonAsLink {
   border: 0;
   background: transparent;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
   width: 50px;
   height: 24px;
+  padding: 0;
   margin: 0px 3px 0px 0px;
   text-align: left;
+  font-size: 16px;
+  color: green;
+}
+
+.buttonAsLink:hover {
+  text-decoration: underline;
+}
+
+a,
+a:visited,
+a:active {
+  color: green;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

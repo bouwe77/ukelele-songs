@@ -6,6 +6,7 @@ import {
   ComboboxOption
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
+import "./combobox-styles.css";
 import { useThrottle } from "react-use";
 import { useState, useRef, useMemo } from "react";
 import { matchSorter } from "match-sorter";
@@ -23,7 +24,10 @@ function SongSearch({ onSelect }) {
   return (
     <div>
       <Combobox aria-label="Songs" onSelect={handleSelect} openOnFocus>
-        <ComboboxInput className="song-search-input" onChange={handleChange} />
+        <ComboboxInput
+          className="song-search-input combobox-input"
+          onChange={handleChange}
+        />
         {results && (
           <ComboboxPopover className="shadow-popup">
             {results.length > 0 ? (
