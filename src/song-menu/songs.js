@@ -6,6 +6,42 @@ export default [
     links: []
   },
   {
+    title: "Skinny Love",
+    chords: ["Am", "C", "G", "F"],
+    lines: [
+      ["Intro"],
+      ["Am", "C", "G", "G"],
+      ["Verse 1"],
+      ["Am", "C", "G", "G"],
+      ["Am", "C", "G", "G"],
+      ["Am", "C", "G", "G"],
+      ["G", "G", "Am", "Am"],
+      ["Break "],
+      ["Am", "Am", "Am", "G"],
+      ["Verse 2"],
+      ["..."],
+      ["Chorus"],
+      ["C", "C", "G", "F"],
+      ["Break after chorus"],
+      ["F", "F", "F", "F"],
+      ["Verse 3"],
+      ["..."],
+      ["Break"],
+      ["Am", "Am", "Am", "Am"],
+      ["Chorus"],
+      ["C", "C", "G", "F"],
+      ["Break after chorus"],
+      ["F", "F", "F", "F"],
+      ["Outro"],
+      ["C", "C", "G", "F"],
+      ["C", "C", "G", "F"],
+      ["F", "F", "F", "F"],
+      ["Am", "C", "G", "G"],
+      ["Am", "C", "G", "G"]
+    ],
+    links: []
+  },
+  {
     title: "Twist In My Sobriety",
     chords: ["Em", "Am7", "B"],
     lines: [
