@@ -9,12 +9,8 @@ export default [
     title: "Skinny Love",
     chords: ["Am", "C", "G", "F"],
     lines: [
-      ["Intro"],
-      ["Am", "C", "G", "G"],
-      ["Verse 1"],
-      ["Am", "C", "G", "G"],
-      ["Am", "C", "G", "G"],
-      ["Am", "C", "G", "G"],
+      ["Intro + Verse 1"],
+      ["Am", "C", "G", "G", "(3x)"],
       ["G", "G", "Am", "Am"],
       ["Break "],
       ["Am", "Am", "Am", "G"],
@@ -29,15 +25,13 @@ export default [
       ["Break"],
       ["Am", "Am", "Am", "Am"],
       ["Chorus"],
-      ["C", "C", "G", "F"],
+      ["C", "C", "G", "F", "(4x)"],
       ["Break after chorus"],
       ["F", "F", "F", "F"],
       ["Outro"],
-      ["C", "C", "G", "F"],
-      ["C", "C", "G", "F"],
+      ["C", "C", "G", "F", "(2x)"],
       ["F", "F", "F", "F"],
-      ["Am", "C", "G", "G"],
-      ["Am", "C", "G", "G"]
+      ["Am", "C", "G", "G", "(2x)"]
     ],
     links: []
   },
