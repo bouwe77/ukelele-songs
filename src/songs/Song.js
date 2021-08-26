@@ -15,11 +15,11 @@ export function Song({ song }) {
           <div className="line" key={`${song.title}-line-${lineIndex}`}>
             {line.map((chord, chordIndex) => (
               <div
-                className="line-chord"
+                className={line.length > 1 ? "line-chord" : ""}
                 key={`${song.title}-line-${lineIndex}-${chordIndex}`}
                 style={
                   line.length === 1 && chord.length >= 5
-                    ? { fontWeight: "bold", textTransform: "uppercase" }
+                    ? { fontWeight: "bold" }
                     : undefined
                 }
               >
