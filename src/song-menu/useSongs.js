@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 // const apihostname = 'http://localhost:5234'
-const apiHostname = 'https://ukelele-songs.herokuapp.com'
+const apiHostname = 'https://ukelele-songs.herokuapp.com/api'
 
 export default function useSongs() {
   const [songs, setSongs] = useState([])
