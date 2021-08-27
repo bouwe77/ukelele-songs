@@ -1,5 +1,2 @@
 node_modules
 .env
-
-# db.json on Heroku is leading and should not be overwritten
-db.json
