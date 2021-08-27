@@ -8,11 +8,14 @@
   ],
   "main": "src/index.js",
   "dependencies": {
+    "axios": "^0.21.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-scripts": "4.0.0",
     "react-ukelele": "0.3.2",
-    "use-local-storage-state": "10.0.0"
+    "use-local-storage-state": "10.0.0",
+    "uuid": "^8.3.2",
+    "json-server": "^0.16.3"
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8"
@@ -20,8 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "server": "json-server --watch db.json --port 5234 --delay 600"
   },
   "browserslist": [
     ">0.2%",

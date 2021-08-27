@@ -1,9 +1,19 @@
-import songs from "./songs";
+//import songs from "./songs";
+
+import useSongs from './useSongs'
 
 export default function SongMenu({ selectedValue, onSelect }) {
+  const { songs, isLoading, error } = useSongs()
+
   function handleChange(event) {
-    onSelect(songs.find((song) => song.title === event.target.value));
+    onSelect(songs.find((song) => song.title === event.target.value))
   }
+
+  if (!songs) return null
+
+  if (isLoading) return <>Loading...</>
+
+  if (error) return <>{error}</>
 
   return (
     <select
@@ -12,8 +22,8 @@ export default function SongMenu({ selectedValue, onSelect }) {
       onChange={handleChange}
     >
       {songs.map((song) => {
-        return <option value={song.title}>{song.title}</option>;
+        return <option value={song.title}>{song.title}</option>
       })}
     </select>
-  );
+  )
 }
