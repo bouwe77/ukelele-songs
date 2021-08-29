@@ -1,0 +1,2 @@
+# Do not deploy the following on Heroku:
+db.json
